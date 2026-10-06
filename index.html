@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FrostyReal | Sea of Thieves stories</title>
+  <meta name="description" content="Long-form Sea of Thieves stories from FrostyReal, a solo player with thousands of hours at sea. Watch videos, catch the live stream, or work with me.">
+  <meta property="og:title" content="FrostyReal">
+  <meta property="og:description" content="Long-form Sea of Thieves stories from a solo player.">
+  <meta property="og:image" content="images/banner.jpg">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a class="nav-brand" href="index.html#top" aria-label="FrostyReal home">
+      <img src="images/logo-white.png" alt="" width="34" height="32">
+      <span>FrostyReal</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#about">About</a>
+      <a href="index.html#videos">Videos</a>
+      <a href="index.html#clips">Clips</a>
+      <a href="index.html#live">Live</a>
+      <a href="index.html#partners">Partners</a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="media-kit.html">Media kit</a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="merch.html">Merch</a>
+    </nav>
+    <a class="btn btn-small" href="https://www.youtube.com/@frostyreallive?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+    <a class="upc-tab" href="upc.html"><span class="upc-long">Ultimate Pirate Championship</span><span class="upc-short">UPC</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <img class="hero-logo" src="images/logo-white.png" alt="FrostyReal logo" width="300" height="282">
+        <div class="hero-copy">
+          <h1>FrostyReal</h1>
+          <p class="hero-tag">Just a goldfish in the ocean</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://www.youtube.com/@frostyreallive" target="_blank" rel="noopener">Watch on YouTube</a>
+            <a class="btn btn-ghost" href="#live">Catch the stream</a>
+          </div>
+        </div>
+      </div>
+      <svg class="hills" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+        <path class="hill-back" d="M0 120 C 220 60 420 70 640 120 C 860 170 1080 150 1440 70 L1440 220 L0 220 Z"/>
+        <path class="hill-front" d="M0 170 C 260 110 520 120 760 160 C 1000 200 1200 170 1440 130 L1440 220 L0 220 Z"/>
+      </svg>
+    </section>
+
+    <section id="about" class="section section-about">
+      <div class="wrap about-grid">
+        <div>
+          <h2>About me</h2>
+          <p class="about-lead reveal">A Sea of Thieves partner across Kick, YouTube, and TikTok, bringing fun back to gaming.</p>
+          <p class="about-text reveal">I make content that's entertaining, comedic, and relatable for everyone, not just people who play the game.</p>
+          <p class="about-text reveal">Most of my videos are long, story-driven looks at playing solo, from gold farming to the grind to Pirate Legend.</p>
+        </div>
+        <div class="schedule reveal" id="schedule">
+          <h3>Live schedule</h3>
+          <ul class="schedule-days">
+            <li data-day="1">Monday</li>
+            <li data-day="3">Wednesday</li>
+            <li data-day="5">Friday</li>
+          </ul>
+          <p class="schedule-time">5 PM Eastern</p>
+          <p class="schedule-next" id="next-stream" aria-live="polite"></p>
+          <p class="schedule-where">Live on <a href="https://kick.com/frostyreal" target="_blank" rel="noopener">Kick</a>, <a href="https://www.youtube.com/@frostyreallive" target="_blank" rel="noopener">YouTube</a> and <a href="https://www.tiktok.com/@.frostyreal" target="_blank" rel="noopener">TikTok</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="section">
+      <div class="wrap">
+        <h2>Latest YouTube videos</h2>
+        <p class="lead">Long-form stories about playing Sea of Thieves solo, and what it takes to get ahead.</p>
+
+        <div class="featured">
+          <div class="embed player" data-embed="https://www.youtube-nocookie.com/embed/e-QJw6BJbkQ" data-open="https://www.youtube.com/watch?v=e-QJw6BJbkQ" data-thumb="https://i.ytimg.com/vi/e-QJw6BJbkQ/maxresdefault.jpg" data-title="How I Hit PIRATE LEGEND In 2026"></div>
+          <div class="featured-text">
+            <h3>How I Hit PIRATE LEGEND In 2026</h3>
+            <p>My newest video. Press play to watch it here, or open it on YouTube.</p>
+            <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=e-QJw6BJbkQ" target="_blank" rel="noopener">Open on YouTube</a>
+          </div>
+        </div>
+
+        <ul class="video-grid">
+          <li><a href="https://www.youtube.com/watch?v=NNKyi9a35sY" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/NNKyi9a35sY/hqdefault.jpg" alt=""><span>How a 3700 SOLO Player Goes from POOR to RICH</span></a></li>
+          <li><a href="https://www.youtube.com/watch?v=HG5UmndyztY" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/HG5UmndyztY/hqdefault.jpg" alt=""><span>How a 3600 Hour SOLO player FARMS GOLD from SCRATCH</span></a></li>
+          <li><a href="https://www.youtube.com/watch?v=TRUDuoTgEMI" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/TRUDuoTgEMI/hqdefault.jpg" alt=""><span>Pretending To Be A NOOB... And They Believed Me</span></a></li>
+          <li><a href="https://www.youtube.com/watch?v=NWyEOsBG5Es" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/NWyEOsBG5Es/hqdefault.jpg" alt=""><span>How A 3500 Hour SOLO Player Would Restart Sea Of Thieves</span></a></li>
+          <li><a href="https://www.youtube.com/watch?v=kzwwMlRRg44" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/kzwwMlRRg44/hqdefault.jpg" alt=""><span>Sea of Thieves' Most Underrated Playstyle</span></a></li>
+        </ul>
+        <p class="more"><a href="https://www.youtube.com/@frostyreallive/videos" target="_blank" rel="noopener">See every video on YouTube</a></p>
+      </div>
+    </section>
+
+    <section id="clips" class="section section-alt">
+      <div class="wrap">
+        <h2>Clips</h2>
+        <p class="lead">My most-watched Shorts, biggest first.</p>
+        <div id="clip-grid" class="clip-grid"></div>
+        <p class="more"><a href="https://www.youtube.com/@frostyreallive/shorts" target="_blank" rel="noopener">Watch all Shorts on YouTube</a></p>
+      </div>
+    </section>
+
+    <section id="live" class="section">
+      <div class="wrap">
+        <h2>Live on Kick</h2>
+        <p class="lead">I stream Monday, Wednesday and Friday at 5 PM Eastern. Watch live when I'm on, or catch my latest stream when I'm not.</p>
+
+        <div id="kick-box" class="kick-box">
+          <div class="embed player player-live" data-embed="https://player.kick.com/frostyreal" data-open="https://kick.com/frostyreal" data-title="Watch FrostyReal live on Kick"></div>
+        </div>
+        <p class="more"><a href="https://kick.com/frostyreal/videos" target="_blank" rel="noopener">See every stream on Kick</a></p>
+      </div>
+    </section>
+
+    <section id="partners" class="section section-partner">
+      <div class="wrap">
+        <h2>Partners</h2>
+        <p class="lead">The brands I work with, and how you can work with me.</p>
+
+        <div class="partner-grid">
+          <article class="sponsor">
+            <div class="sponsor-logo"><img src="images/goodys-logo.png" alt="Goody's Granola, like a cookie in a bag" width="237" height="206"></div>
+            <div class="sponsor-text">
+              <h3>Goody's Granola</h3>
+              <p>My current partner. Brooklyn-made granola that's like a cookie in a bag.</p>
+              <p class="code">Use code <strong>Frosty</strong> at checkout.</p>
+              <a class="btn" href="https://goodysgranola.nyc/?ref=frosty" target="_blank" rel="noopener">Shop Goody's Granola</a>
+            </div>
+          </article>
+
+          <div class="work-with-me">
+            <h3>Work with me</h3>
+            <ul>
+              <li>Sponsored short-form videos</li>
+              <li>Brand mentions in live streams</li>
+              <li>Product placements</li>
+              <li>UGC content for ads</li>
+              <li>Custom collaborations built around your goals</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn" href="mailto:frostyrealkick@gmail.com?subject=Business%20inquiry">Contact for business</a>
+              <a class="btn btn-ghost" href="media-kit.html">See the media kit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="media-kit" class="section">
+      <div class="wrap">
+        <h2>Media kit</h2>
+        <p class="lead">For brands and partners. Current follower counts across every platform, and the full kit with my story and what I offer.</p>
+
+        <dl class="kit-stats kit-stats-wide">
+          <div><dt>TikTok</dt><dd>18.4K</dd></div>
+          <div><dt>YouTube</dt><dd>13.6K</dd></div>
+          <div><dt>Kick</dt><dd>5.4K</dd></div>
+          <div><dt>Instagram</dt><dd>3.3K</dd></div>
+        </dl>
+        <div class="hero-actions">
+          <a class="btn" href="media-kit.html">Open the media kit</a>
+          <a class="btn btn-ghost" href="mailto:frostyrealkick@gmail.com?subject=Business%20inquiry">Contact for business</a>
+        </div>
+        <p class="note">Follower counts were read from each platform on October 1, 2026.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>FrostyReal</span>
+      <span class="footer-links">
+        <a href="https://www.youtube.com/@frostyreallive" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://kick.com/frostyreal" target="_blank" rel="noopener">Kick</a>
+        <a href="https://www.tiktok.com/@.frostyreal" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/frostyreallive/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://x.com/FrostyRealLive" target="_blank" rel="noopener">X</a>
+        <a href="merch.html">Merch</a>
+        <a href="https://linktr.ee/frostyreal" target="_blank" rel="noopener">All links</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

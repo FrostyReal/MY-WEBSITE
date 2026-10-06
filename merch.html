@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frosty Merch | FrostyReal</title>
+  <meta name="description" content="Official FrostyReal merch. Hoodies, shirts, shorts and more. Pick your style here and check out securely.">
+  <meta property="og:title" content="FrostyReal merch">
+  <meta property="og:image" content="images/banner.jpg">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="merch.css">
+</head>
+<body class="merch-page">
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a class="nav-brand" href="index.html#top" aria-label="FrostyReal home">
+      <img src="images/logo-white.png" alt="" width="34" height="32">
+      <span>FrostyReal</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#about">About</a>
+      <a href="index.html#videos">Videos</a>
+      <a href="index.html#clips">Clips</a>
+      <a href="index.html#live">Live</a>
+      <a href="index.html#partners">Partners</a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="media-kit.html">Media kit</a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="merch.html" aria-current="page">Merch</a>
+    </nav>
+    <a class="btn btn-small" href="https://www.youtube.com/@frostyreallive?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+    <a class="upc-tab" href="upc.html"><span class="upc-long">Ultimate Pirate Championship</span><span class="upc-short">UPC</span></a>
+  </header>
+
+  <main>
+    <section class="shop-top">
+      <div class="wrap shop-top-inner">
+        <div>
+          <h1>Frosty Merch</h1>
+          <p class="lead">Official FrostyReal gear. Pick your style here, then pay securely on checkout.</p>
+        </div>
+        <img class="shop-emote" src="images/emote-shades.png" alt="" width="256" height="256">
+      </div>
+    </section>
+
+    <section class="shop-body">
+      <div class="wrap">
+        <p id="shop-status" class="shop-status" aria-live="polite">Loading the merch...</p>
+        <ul id="shop-grid" class="shop-grid"></ul>
+        <p class="more"><a href="https://frostyrealkick-shop.fourthwall.com/" target="_blank" rel="noopener">Prefer to browse on Fourthwall? Open the full store</a></p>
+      </div>
+    </section>
+  </main>
+
+  <button id="cart-btn" class="cart-btn" type="button" aria-label="Open cart">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 9 17h12v-2H9.4l1.1-2h7.5a2 2 0 0 0 1.7-1l3.6-6.5A1 1 0 0 0 22.4 4H6.2l-.9-2H3z"/></svg>
+    <span>Cart</span><span id="cart-count" class="cart-count">0</span>
+  </button>
+
+  <div id="overlay" class="overlay" hidden></div>
+
+  <aside id="cart" class="drawer" aria-label="Your cart" hidden>
+    <div class="drawer-head"><h2>Your cart</h2><button type="button" class="x" id="cart-close" aria-label="Close cart">&times;</button></div>
+    <ul id="cart-lines" class="cart-lines"></ul>
+    <div class="drawer-foot">
+      <p class="subtotal"><span>Subtotal</span><strong id="cart-total">$0.00</strong></p>
+      <p class="fine">Shipping and taxes are added at checkout.</p>
+      <button id="checkout" class="btn btn-wide" type="button">Checkout</button>
+      <p id="cart-msg" class="fine" aria-live="polite"></p>
+    </div>
+  </aside>
+
+  <div id="pdp" class="pdp" role="dialog" aria-modal="true" aria-labelledby="pdp-title" hidden>
+    <div class="pdp-card">
+      <button type="button" class="x pdp-x" id="pdp-close" aria-label="Close">&times;</button>
+      <div class="pdp-gallery">
+        <div class="pdp-stage"><img id="pdp-main" alt=""></div>
+        <ul id="pdp-thumbs" class="pdp-thumbs"></ul>
+      </div>
+      <div class="pdp-info">
+        <h2 id="pdp-title"></h2>
+        <p id="pdp-price" class="pdp-price"></p>
+        <div id="pdp-colors" class="opt"></div>
+        <div id="pdp-sizes" class="opt"></div>
+        <p id="pdp-desc" class="pdp-desc"></p>
+        <button id="pdp-add" class="btn btn-wide" type="button">Add to cart</button>
+        <p id="pdp-msg" class="fine" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>FrostyReal</span>
+      <span class="footer-links">
+        <a href="index.html">Back to the site</a>
+        <a href="https://frostyrealkick-shop.fourthwall.com/" target="_blank" rel="noopener">Fourthwall store</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="merch.js"></script>
+</body>
+</html>
