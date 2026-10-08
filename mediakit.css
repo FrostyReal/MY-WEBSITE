@@ -1,0 +1,296 @@
+/* Media kit page (loads after home.css and sea.css, uses their tokens) */
+
+html, body { overflow-x: clip; }
+.print-only { display: none; }
+[hidden] { display: none !important; }
+button.pill { font-family: var(--body); }
+
+/* ---------- Hero: the home page's moonlit sea (scene markup and motion come from sea.css / sea.js) ---------- */
+.kit-hero {
+  align-items: center;
+  padding: clamp(96px, 13svh, 140px) 0 clamp(80px, 12svh, 130px);
+}
+.kit-hero__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(28px, 6vw, 80px);
+  align-items: center;
+}
+.kit-hero h1 { font-size: clamp(3.4rem, 8.5vw, 6.4rem); }
+.kit-pitch {
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  max-width: 34ch;
+  margin: 14px 0 0;
+  color: var(--ice);
+  text-shadow: 0 1px 16px rgba(2, 7, 13, 0.75);
+}
+.kit-hero .btn-row { margin-top: 24px; }
+
+/* official Sea of Thieves Partner badge, between the pitch and the buttons */
+.kit-partner {
+  display: block;
+  width: clamp(190px, 17vw, 230px);
+  height: auto;
+  margin: 18px 0 0 -6px;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+}
+
+.kit-hero__art { position: relative; justify-self: center; width: min(100%, 320px); }
+.kit-photo {
+  border-radius: var(--r-media);
+  border: 1.5px solid rgba(0, 167, 245, 0.45);
+  background: var(--sea);
+  box-shadow: 0 0 60px rgba(0, 167, 245, 0.22);
+  overflow: hidden;
+}
+.kit-photo img { display: block; width: 100%; height: auto; }
+.kit-badge { position: absolute; height: auto; }
+.kit-badge--logo {
+  width: 68px;
+  left: -26px;
+  bottom: -22px;
+  padding: 10px;
+  background: var(--sea);
+  border: 1px solid var(--rim);
+  border-radius: 50%;
+  box-shadow: 0 0 22px rgba(0, 167, 245, 0.25);
+}
+
+/* Scene tweaks for this page only: the photo takes the upper right, so the moon moves out to the far right
+   beside it and the far island moves with the moon. The near island is a bit smaller to keep the buttons clear. */
+.kit-page .scene { --mx: 89%; }
+.kit-page .island--far { right: -3%; width: clamp(220px, 26vw, 420px); filter: brightness(1.45) saturate(1.1); }   /* peeks out to the right of the photo, a bit brighter so it reads */
+.kit-page .island--near { width: min(clamp(220px, 32vw, 560px), 62svh); }
+
+@media (max-width: 820px) {
+  .kit-hero__inner { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .kit-hero__art { width: min(62%, 230px); justify-self: start; margin: 0 0 0 12px; }
+  .kit-partner { margin-left: -4px; }
+}
+@media (max-width: 760px) {
+  .kit-page .scene { --mx: 84%; }
+  .kit-page .scene__moon { top: 150px; }   /* clear of the two-row fixed header (about 96px) on any phone height */
+  .kit-page .island--far { right: 36%; width: 42vw; }
+  .kit-page .island--near { width: 82vw; }
+  .kit-hero { padding-bottom: 150px; }
+}
+
+/* ---------- Section intros ---------- */
+.section .lead { margin-top: 12px; }
+
+/* ---------- What a campaign gets you ---------- */
+.perf { margin-top: 32px; display: grid; gap: 34px; }
+.perf__head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.perf__head h3 { margin: 0; font-size: 1.5rem; color: var(--ice); }
+.perf__head::after { content: ""; flex: 1; height: 1px; background: var(--rim); }
+.perf__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+}
+.perf__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 168px;
+  padding: 22px;
+  background: linear-gradient(160deg, rgba(0, 167, 245, 0.12), var(--glass) 62%);
+  border-color: rgba(0, 167, 245, 0.28);
+}
+.perf__value {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.9rem, 5vw, 4.1rem);
+  line-height: 0.95;
+  color: var(--frost);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 32px rgba(0, 167, 245, 0.3);
+}
+.perf__label { display: block; color: var(--ice); font-weight: 600; line-height: 1.3; }
+.perf__sub { display: block; color: var(--mist); font-size: 0.9rem; font-weight: 400; margin-top: 3px; }
+
+/* ---------- Who's watching ---------- */
+.followers { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.follower { display: flex; flex-direction: column; gap: 2px; padding: 18px 20px 16px; background: var(--glass); border: 1px solid var(--rim); border-radius: var(--r-media); }
+.follower__name { font-family: var(--display); font-weight: 700; font-size: 1.15rem; color: var(--mist); line-height: 1.1; }
+.follower__count { font-family: var(--display); font-weight: 800; font-size: clamp(2.2rem, 4vw, 3rem); line-height: 1; }
+.follower__note { color: var(--mist); font-size: 0.9rem; line-height: 1.4; margin-top: 6px; }
+#kit-note { margin-top: 16px; }
+@media (max-width: 960px) { .followers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .followers { grid-template-columns: minmax(0, 1fr); } }
+
+.demo { margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.demo__box { padding: clamp(20px, 3vw, 28px); }
+.demo__box h3 { font-size: 1.4rem; margin-bottom: 20px; }
+#demo-source { margin-top: 18px; }
+
+/* bars: widths are set inline (% of the largest value in the list), so the fill always shows */
+.bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.bar__head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 7px; }
+.bar__label { color: var(--ice); }
+.bar__pct { color: var(--ice); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.bar__track { height: 10px; border-radius: var(--r-pill); background: rgba(238, 246, 251, 0.10); overflow: hidden; }
+.bar__fill {
+  display: block;
+  height: 100%;
+  min-width: 4px;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, #0098e0, #00a7f5);
+
+}
+
+/* gender: two big numbers, then a thick split bar */
+.gender-big { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 14px 32px; }
+.gender__pct { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(2.2rem, 4vw, 3rem); line-height: 1; font-variant-numeric: tabular-nums; }
+.gender__label { display: flex; align-items: center; gap: 8px; color: var(--ice); margin-top: 6px; }
+.gender__dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(238, 246, 251, 0.75); flex: none; }
+.gender__dot.is-first { background: var(--frost); }
+.split { display: flex; height: 20px; gap: 3px; border-radius: var(--r-pill); overflow: hidden; background: rgba(238, 246, 251, 0.10); }
+.split__seg { display: block; min-width: 6px; background: rgba(238, 246, 251, 0.75); }
+.split__seg.is-first { background: linear-gradient(90deg, #0098e0, #00a7f5); }
+@media (prefers-reduced-motion: reduce) { .bar__fill, .split__seg { transition: none; } }
+
+/* ---------- Ways to partner ---------- */
+.opts { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.opt { grid-column: span 2; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 170px; padding: 24px; }
+.opt:nth-child(n + 4) { grid-column: span 3; }
+.opt__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-media);
+  color: var(--frost);
+  background: rgba(0, 167, 245, 0.12);
+  border: 1px solid rgba(0, 167, 245, 0.35);
+}
+.opt h3 { font-size: 1.4rem; margin: 0; }
+.rates { margin: 24px 0 0; color: var(--mist); }
+@media (max-width: 900px) {
+  .opts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .opt, .opt:nth-child(n + 4) { grid-column: span 1; }
+  .opt:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .opts { grid-template-columns: minmax(0, 1fr); }
+  .opt { min-height: 0; }
+}
+
+/* ---------- Case study ---------- */
+.case { margin-top: 28px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+.case__main { display: flex; gap: clamp(18px, 3vw, 32px); align-items: center; padding: clamp(24px, 4vw, 40px); }
+.case__main > img { width: 168px; flex: none; }
+.case__main p { margin: 0 0 0.6em; }
+.case__tag { color: var(--frost); font-weight: 600; font-size: 0.95rem; margin: 2px 0 10px !important; }
+.open-spot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: clamp(24px, 4vw, 40px);
+  border: 1.5px dashed rgba(0, 167, 245, 0.5);
+  border-radius: var(--r-media);
+  background: rgba(0, 167, 245, 0.04);
+  color: var(--ice);
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.open-spot:hover { background: rgba(0, 167, 245, 0.09); border-color: var(--frost); }
+.open-spot__title { font-family: var(--display); font-weight: 800; font-size: clamp(1.8rem, 3.5vw, 2.4rem); line-height: 1; }
+.open-spot__line { color: var(--mist); }
+@media (max-width: 820px) { .case { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .case__main { flex-direction: column; align-items: flex-start; } }
+
+/* ---------- Contact band (frost spotlight, like the merch band) ---------- */
+.band { padding: clamp(28px, 4vw, 48px) 0 0; }
+.panel--contact {
+  overflow: hidden;
+  border-color: rgba(0, 167, 245, 0.25);
+  padding: clamp(40px, 7vw, 80px) clamp(20px, 5vw, 64px);
+  background:
+    radial-gradient(ellipse 50% 90% at 85% 50%, rgba(0, 167, 245, 0.22), transparent 72%),
+    linear-gradient(100deg, #0a2236 0%, #06121d 100%);
+}
+.contact-fx {
+  position: absolute;
+  inset: 0;
+  background: url("images/logo-white.png") 0 0 / 48px 48px repeat;
+  opacity: 0.04;
+  transform: rotate(-12deg) scale(1.4);
+  pointer-events: none;
+}
+.contact__copy { position: relative; }
+.panel--contact .h2-sm { font-size: clamp(2.6rem, 6.4vw, 4.6rem); line-height: 0.95; margin-bottom: 18px; }
+.panel--contact p { max-width: 46ch; }
+.contact__mail { font-size: 1.15rem; margin-bottom: 4px !important; }
+.contact__mail a { font-weight: 600; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.panel--contact .btn-row { align-items: center; }
+.text-btn { background: none; border: 0; padding: 8px 4px; color: var(--mist); font: inherit; font-weight: 600; cursor: pointer; text-underline-offset: 4px; }
+.text-btn:hover { color: var(--frost); text-decoration: underline; }
+
+/* ---------- Print / Save as PDF ---------- */
+@page { size: auto; margin: 14mm 14mm 16mm; }
+@media print {
+  :root { --ice: #0a2236; --mist: #4a6075; --rim: rgba(10, 34, 54, 0.2); --glass: transparent; --frost: #0078b8; --sea: #fff; --abyss: #fff; }
+  html { background: #fff !important; background-image: none !important; }
+  body { background: #fff; color: #0a2236; font-size: 10.5pt; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #snow, .deep, .top-bar, .foot, .scene, .kit-badge--logo, .sticker, .no-print, .btn-row, .text-btn, .pill, .open-spot, .contact-fx { display: none !important; }
+  .print-only { display: block !important; }
+  .kit-print-mail { font-weight: 600; margin-top: 10px; color: #0a2236; }
+  .kit-hero { min-height: 0; padding: 0 0 14px; display: block; overflow: visible; }
+  .kit-hero__inner { grid-template-columns: 1fr 190px; gap: 24px; }
+  .kit-hero h1 { font-size: 44pt; color: #0a2236; text-shadow: none; animation: none; }
+  .kit-pitch { font-size: 11pt; text-shadow: none; max-width: none; }
+  .kit-photo { box-shadow: none; border: 1.5px solid #0078b8; }
+  .kit-partner { width: 150px; filter: none; margin: 8px 0 10px; }
+  .section { padding: 14px 0; }
+  .section .lead { margin-top: 4px; }
+  h2 { font-size: 22pt; color: #0078b8; border-bottom: 1.5px solid #0078b8; padding-bottom: 4px; display: block; }
+  h3 { font-size: 13pt; }
+  .panel, .follower, .opt, .perf__item, .demo__box, .case__main { break-inside: avoid; page-break-inside: avoid; }
+  section { break-inside: auto; }
+  #audience, #options, #case { break-inside: avoid; }
+  .perf { gap: 12px; margin-top: 12px; }
+  .perf__head { margin-bottom: 6px; }
+  .perf__head h3 { font-size: 12pt; }
+  .perf__grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .perf__item { min-height: 0; padding: 10px 12px; gap: 6px; background: transparent; border-color: rgba(10, 34, 54, 0.25); }
+  .perf__value { font-size: 24pt; text-shadow: none; }
+  .perf__label { font-size: 9.5pt; }
+  .perf__sub { font-size: 8pt; }
+  .followers { margin-top: 12px; gap: 10px; grid-template-columns: repeat(4, 1fr); }
+  .follower { padding: 10px 12px; }
+  .follower__count { font-size: 22pt; }
+  .follower__note { font-size: 8.5pt; }
+  .demo { margin-top: 12px; gap: 10px; grid-template-columns: repeat(3, 1fr); }
+  .demo__box { padding: 12px; }
+  .demo__box h3 { margin-bottom: 8px; }
+  .bars { gap: 7px; }
+  .bar__head { margin-bottom: 3px; font-size: 9.5pt; }
+  .gender-big { margin-bottom: 10px; }
+  .gender__pct { font-size: 22pt; }
+  .opts { margin-top: 12px; gap: 10px; grid-template-columns: repeat(3, 1fr); }
+  .opt, .opt:nth-child(n + 4) { grid-column: auto; }
+  .opt { padding: 12px; gap: 8px; min-height: 0; }
+  .opt__icon { width: 40px; height: 40px; background: transparent; }
+  .opt h3 { font-size: 11pt; }
+  .case { grid-template-columns: 1fr; margin-top: 12px; }
+  .case__main > img { width: 110px; }
+  .band { padding-top: 12px; }
+  .panel--contact { background: #fff; border: 1.5px solid #0078b8; padding: 18px 22px; break-inside: avoid; }
+  .panel--contact .h2-sm { font-size: 24pt; border: 0; color: #0078b8; margin-bottom: 8px; }
+  a { color: #0a2236; text-decoration: none; }
+  /* bars print in a solid frost color */
+  .bar__fill, .split__seg { transform: none !important; transition: none !important; background: #0078b8; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .split__seg:not(.is-first) { background: #8fa8ba; }
+  .gender__dot { background: #8fa8ba; }
+  .gender__dot.is-first { background: #0078b8; }
+  .bar__track, .split { background: rgba(10, 34, 54, 0.12); }
+  .sponsor img { background: #fff; border: 1px solid rgba(10, 34, 54, 0.2); }
+}

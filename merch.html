@@ -4,107 +4,331 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Frosty Merch | FrostyReal</title>
-  <meta name="description" content="Official FrostyReal merch. Hoodies, shirts, shorts and more. Pick your style here and check out securely.">
-  <meta property="og:title" content="FrostyReal merch">
-  <meta property="og:image" content="images/banner.jpg">
+  <meta name="description" content="Official FrostyReal merch. Hoodies, tees, crop tops, hats and stickers. Pick your style here and check out securely.">
+  <meta property="og:title" content="Frosty Merch | FrostyReal">
+  <meta property="og:description" content="Official FrostyReal merch. Hoodies, tees, crop tops, hats and stickers.">
+  <meta property="og:url" content="https://frostyreal.com/merch.html">
+  <link rel="canonical" href="https://frostyreal.com/merch.html">
+  <meta property="og:image" content="https://frostyreal.com/images/og-frostyreal.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://frostyreal.com/images/og-frostyreal.jpg">
   <link rel="icon" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <meta name="theme-color" content="#02070d">
+  <link rel="preconnect" href="https://imgproxy.fourthwall.dev">
+  <link rel="preconnect" href="https://storefront-api.fourthwall.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="sea.css">
   <link rel="stylesheet" href="merch.css">
 </head>
-<body class="merch-page">
+<body data-sea-life="calm">
+  <a class="skip-link" href="#top">Skip to content</a>
   <canvas id="snow" aria-hidden="true"></canvas>
 
-  <header class="nav">
-    <a class="nav-brand" href="index.html#top" aria-label="FrostyReal home">
-      <img src="images/logo-white.png" alt="" width="34" height="32">
-      <span>FrostyReal</span>
-    </a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="index.html#about">About</a>
-      <a href="index.html#videos">Videos</a>
-      <a href="index.html#clips">Clips</a>
-      <a href="index.html#live">Live</a>
-      <a href="index.html#partners">Partners</a>
-      <span class="nav-sep" aria-hidden="true"></span>
-      <a href="media-kit.html">Media kit</a>
-      <span class="nav-sep" aria-hidden="true"></span>
-      <a href="merch.html" aria-current="page">Merch</a>
-    </nav>
-    <a class="btn btn-small" href="https://www.youtube.com/@frostyreallive?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
-    <a class="upc-tab" href="upc.html"><span class="upc-long">Ultimate Pirate Championship</span><span class="upc-short">UPC</span></a>
+  <!-- "Going deeper" background: depth contours, light pools and occasional sea life (see home.js and home.css) -->
+  <div class="deep" id="deep" aria-hidden="true">
+    <div class="deep__pools" id="deep-pools"></div>
+    <svg class="deep__contours" id="deep-contours" width="100%" height="100%" focusable="false">
+      <g id="deep-pat"></g>
+    </svg>
+    <div class="deep__life" id="deep-life"></div>
+  </div>
+
+  <header class="top-bar" id="top-bar">
+    <div class="top-bar__inner">
+      <a class="brand" href="index.html#top" aria-label="FrostyReal home">
+        <img src="images/logo-white.png" alt="" height="32">
+        <span>FrostyReal</span>
+      </a>
+      <a class="live-badge" id="live-badge" href="https://kick.com/frostyreal" target="_blank" rel="noopener" aria-label="FrostyReal is live on Kick now" data-goatcounter-click="live-badge" data-goatcounter-title="LIVE badge" hidden><span class="live-badge__dot" aria-hidden="true"></span><span>LIVE<span class="live-badge__long"> on Kick</span></span></a>
+      <nav class="tabs" aria-label="Main">
+        <a href="index.html#top">Home</a>
+        <a href="index.html#watch">Watch</a>
+        <a href="index.html#live">Live</a>
+        <a href="index.html#partners">Partners</a>
+        <span class="tabs__sep" aria-hidden="true"></span>
+        <a href="media-kit.html" data-goatcounter-click="nav-media-kit">Media kit</a>
+        <span class="tabs__sep" aria-hidden="true"></span>
+        <a href="merch.html" data-goatcounter-click="nav-merch" aria-current="page">Merch</a>
+      </nav>
+      <a class="pill pill--primary pill--sm top-bar__sub" data-goatcounter-click="subscribe" href="https://www.youtube.com/@frostyreallive?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+      <button class="cart-btn" id="cart-btn" type="button" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8zM8.5 10.5V7a3.5 3.5 0 0 1 7 0v3.5"/></svg>
+        <span class="cart-btn__count" id="cart-count" hidden>0</span>
+      </button>
+      <a class="upc-pill" href="upc.html" data-goatcounter-click="nav-upc"><span class="upc-pill__glow" aria-hidden="true"></span><span class="upc-pill__embers" aria-hidden="true"><i style="--x:10%;--d:2.6s;--dl:-.4s"></i><i style="--x:22%;--d:3.4s;--dl:-1.9s"></i><i style="--x:33%;--d:2.9s;--dl:-1.1s"></i><i style="--x:44%;--d:3.8s;--dl:-2.7s"></i><i class="r" style="--x:56%;--d:3.1s;--dl:-.9s"></i><i class="r" style="--x:67%;--d:2.7s;--dl:-2.2s"></i><i class="r" style="--x:79%;--d:3.6s;--dl:-1.4s"></i><i class="r" style="--x:90%;--d:3s;--dl:-2.9s"></i></span><img src="images/upc-wordmark.png" alt="Ultimate Pirate Championship" height="22"></a>
+    </div>
   </header>
 
-  <main>
-    <section class="shop-top">
-      <div class="wrap shop-top-inner">
-        <div>
-          <h1>Frosty Merch</h1>
-          <p class="lead">Official FrostyReal gear. Pick your style here, then pay securely on checkout.</p>
+  <main id="top" tabindex="-1">
+    <!-- Hero: the home page's night sea, with a frost spotlight on the best sellers -->
+    <section class="hero hero--shop" id="shop-hero">
+      <div class="scene" aria-hidden="true">
+        <div class="scene__sky"></div>
+        <div class="scene__stars" id="sea-stars"></div>
+        <div class="scene__moon"></div>
+        <div class="cloud" style="--top:8%;--h:clamp(50px,8vh,90px);--dur:110s;--dir:normal">
+          <svg viewBox="0 0 1600 90" preserveAspectRatio="none" focusable="false">
+            <defs>
+              <linearGradient id="sc1" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#8fa8ba" stop-opacity=".45"/><stop offset=".7" stop-color="#cfe3ef" stop-opacity=".8"/><stop offset="1" stop-color="#eef6fb" stop-opacity="1"/></linearGradient>
+              <filter id="sb1" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="9 2"/></filter>
+            </defs>
+            <g filter="url(#sb1)"><g id="scg1"><ellipse cx="260" cy="40" rx="220" ry="7" fill="url(#sc1)"/><ellipse cx="580" cy="50" rx="150" ry="5" fill="url(#sc1)"/><ellipse cx="430" cy="32" rx="100" ry="4" fill="url(#sc1)"/></g><use href="#scg1" x="800"/></g>
+          </svg>
         </div>
-        <img class="shop-emote" src="images/emote-shades.png" alt="" width="256" height="256">
+        <div class="cloud" style="--top:27%;--h:clamp(50px,8vh,90px);--dur:80s;--dir:reverse">
+          <svg viewBox="0 0 1600 90" preserveAspectRatio="none" focusable="false">
+            <defs>
+              <linearGradient id="sc2" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#8fa8ba" stop-opacity=".45"/><stop offset=".7" stop-color="#cfe3ef" stop-opacity=".8"/><stop offset="1" stop-color="#eef6fb" stop-opacity="1"/></linearGradient>
+              <filter id="sb2" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="8 2"/></filter>
+            </defs>
+            <g filter="url(#sb2)"><g id="scg2"><ellipse cx="200" cy="46" rx="170" ry="6" fill="url(#sc2)"/><ellipse cx="520" cy="38" rx="200" ry="7" fill="url(#sc2)"/><ellipse cx="700" cy="50" rx="70" ry="4" fill="url(#sc2)"/></g><use href="#scg2" x="800"/></g>
+          </svg>
+        </div>
+        <div class="cloud" style="--top:16.5%;--h:clamp(50px,8vh,90px);--dur:95s;--dir:normal">
+          <svg viewBox="0 0 1600 90" preserveAspectRatio="none" focusable="false">
+            <defs>
+              <linearGradient id="sc3" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#8fa8ba" stop-opacity=".45"/><stop offset=".7" stop-color="#cfe3ef" stop-opacity=".8"/><stop offset="1" stop-color="#eef6fb" stop-opacity="1"/></linearGradient>
+              <filter id="sb3" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="10 2.5"/></filter>
+            </defs>
+            <g filter="url(#sb3)"><g id="scg3"><ellipse cx="300" cy="44" rx="260" ry="8" fill="url(#sc3)"/><ellipse cx="640" cy="40" rx="120" ry="5" fill="url(#sc3)"/><ellipse cx="120" cy="50" rx="90" ry="4" fill="url(#sc3)"/></g><use href="#scg3" x="800"/></g>
+          </svg>
+        </div>
+        <div class="island island--far"><svg viewBox="0 -30 380 176" preserveAspectRatio="xMidYMax meet" focusable="false">
+          <defs>
+            <linearGradient id="fi-g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1e3d59"/><stop offset="1" stop-color="#162f47"/></linearGradient>
+            <g id="fi-crown"><path d="M0 0 Q16 -18 42 -4 Q18 -9 0 0Z"/><path d="M0 0 Q10 -24 30 -22 Q12 -16 0 0Z"/><path d="M0 0 Q-14 -20 -36 -10 Q-14 -10 0 0Z"/><path d="M0 0 Q-22 -4 -34 8 Q-14 0 0 0Z"/><path d="M0 0 Q18 2 36 16 Q14 6 0 0Z"/><path d="M0 0 Q-2 -26 -14 -32 Q-4 -18 0 0Z"/></g>
+          </defs>
+          <g fill="none" stroke="#0c2235" stroke-linecap="round">
+            <path d="M150 66 Q148 42 140 22" stroke-width="3.4"/>
+            <path d="M184 58 Q190 32 196 10" stroke-width="3.6"/>
+            <path d="M220 66 Q230 50 236 32" stroke-width="3"/>
+            <path d="M114 102 Q108 86 100 70" stroke-width="2.6"/>
+          </g>
+          <g fill="#0c2235">
+            <use href="#fi-crown" transform="translate(140 22) scale(.95)"/>
+            <use href="#fi-crown" transform="translate(196 10)"/>
+            <use href="#fi-crown" transform="translate(236 32) scale(-.8 .8)"/>
+            <use href="#fi-crown" transform="translate(100 70) scale(.7)"/>
+          </g>
+          <path fill="url(#fi-g)" d="M0 146 C20 140 40 128 70 112 C95 98 120 66 160 56 C200 48 235 60 262 80 C290 98 330 122 380 138 L380 146 Z"/>
+          <path fill="#142c44" d="M8 146 L16 130 L28 124 L40 132 L46 146Z"/>
+          <path fill="#142c44" d="M318 146 L326 122 L338 114 L350 120 L362 146Z"/>
+          <path fill="#27495f" d="M0 146 C40 138 80 134 120 133 C190 131 260 133 330 138 C355 140 370 143 380 146Z"/>
+          <path fill="none" stroke="#bee6ff" stroke-opacity=".3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M190 49 C228 52 250 68 262 80 C290 98 330 122 376 137"/>
+          <path fill="none" stroke="#bee6ff" stroke-opacity=".28" stroke-width="1.1" stroke-linecap="round" d="M326 122 L338 114 L350 120 L360 142"/>
+        </svg></div>
+        <div class="scene__water">
+          <div class="wave" style="--t:-3px;--h:16px;--fill:#123756;--crest:.34;--dur:75s;--dir:normal;--bobdur:7s;--bob:1px">
+            <div class="wave__track">
+              <svg viewBox="0 0 1200 16" preserveAspectRatio="none" focusable="false"><path d="M0 10 q30 -6 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 V16 H0 Z"/><path class="crest" d="M0 10 q30 -6 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/></svg>
+              <div class="wave__body"></div>
+            </div>
+          </div>
+          <div class="wave" style="--t:10%;--h:22px;--fill:#0e2b45;--crest:.30;--dur:58s;--dir:reverse;--bobdur:6s;--bob:1px">
+            <div class="wave__track">
+              <svg viewBox="0 0 1200 22" preserveAspectRatio="none" focusable="false"><path d="M0 12 q50 -10 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V22 H0 Z"/><path class="crest" d="M0 12 q50 -10 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0"/></svg>
+              <div class="wave__body"></div>
+            </div>
+          </div>
+          <div class="wave" style="--t:28%;--h:30px;--fill:#0a2034;--crest:.26;--dur:44s;--dir:normal;--bobdur:7.5s;--bob:1.5px">
+            <div class="wave__track">
+              <svg viewBox="0 0 1200 30" preserveAspectRatio="none" focusable="false"><path d="M0 16 q75 -14 150 0 t150 0 t150 0 t150 0 t150 0 t150 0 t150 0 t150 0 V30 H0 Z"/><path class="crest" d="M0 16 q75 -14 150 0 t150 0 t150 0 t150 0 t150 0 t150 0 t150 0 t150 0"/></svg>
+              <div class="wave__body"></div>
+            </div>
+          </div>
+          <div class="ship" id="sea-ship"><div class="ship__rock"><svg viewBox="-44 0 284 154" focusable="false">
+            <defs>
+              <linearGradient id="sh-sail" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#0c2236"/><stop offset=".55" stop-color="#10283d"/><stop offset="1" stop-color="#1f4968"/></linearGradient>
+              <radialGradient id="sh-glow"><stop offset="0" stop-color="#dcf0ff" stop-opacity=".8"/><stop offset=".4" stop-color="#dcf0ff" stop-opacity=".25"/><stop offset="1" stop-color="#dcf0ff" stop-opacity="0"/></radialGradient>
+            </defs>
+            <g class="ship__wake" fill="none" stroke="#eef6fb" stroke-linecap="round">
+              <path d="M16 150 Q-8 154 -36 151" stroke-width="1.6"/>
+              <path d="M22 153 Q0 158 -26 156" stroke-width="1.2"/>
+              <path d="M30 154 Q10 150 -14 146" stroke-width="1"/>
+              <path d="M170 150 Q190 152 212 148" stroke-width="1.4"/>
+              <path d="M150 153 Q172 156 192 154" stroke-width="1"/>
+            </g>
+            <g fill="none" stroke="#06121d" stroke-linecap="round">
+              <path d="M112 108 V10" stroke-width="4"/>
+              <path d="M186 100 L232 78" stroke-width="3.2"/>
+              <path d="M232 78 L112 18 M190 98 L113 50 M112 14 L16 90" stroke-width=".8"/>
+              <path d="M14 96 V88 M26 96 V88 M38 96 V88 M50 96 V88 M14 88 H52" stroke-width="1.6"/>
+            </g>
+            <path fill="#06121d" d="M104 22 L106 14 H118 L120 22 Z"/>
+            <path fill="#0b1f31" stroke="#bee6ff" stroke-opacity=".3" stroke-width=".7" d="M112 9 Q122 5 135 10 Q124 12 112 16 Z"/>
+            <path fill="url(#sh-sail)" d="M88 28 L90 43 Q112 49 138 43 L140 28 Q114 34 88 28Z"/>
+            <path fill="none" stroke="#bee6ff" stroke-opacity=".35" stroke-width=".8" stroke-linecap="round" d="M140 28 L138 43 Q112 49 90 43"/>
+            <path fill="url(#sh-sail)" d="M72 49 L74 98 Q112 109 152 98 C167 84 165 62 154 49 Q112 56 72 49Z"/>
+            <path fill="none" stroke="#bee6ff" stroke-opacity=".12" stroke-width=".8" d="M100 54 Q98 78 100 104 M124 54 Q126 78 124 103"/>
+            <path fill="none" stroke="#bee6ff" stroke-opacity=".35" stroke-width="1" stroke-linecap="round" d="M154 49 C165 62 167 84 152 98 Q112 109 74 98"/>
+            <path fill="none" stroke="#06121d" stroke-width="2.6" stroke-linecap="round" d="M86 28 H142 M70 49 H156"/>
+            <path fill="#06121d" d="M14 112 L5 123 L8 144 L17 136 Z"/>
+            <path fill="#06121d" d="M14 96 L58 96 L58 106 Q100 112 140 106 Q168 102 190 98 Q186 122 172 136 Q156 150 130 152 L48 152 Q24 148 16 124 Q12 108 14 96 Z"/>
+            <path fill="none" stroke="#bee6ff" stroke-opacity=".1" stroke-width=".8" d="M20 118 Q90 128 178 112 M24 132 Q90 142 166 128 M34 144 Q90 150 142 146"/>
+            <path fill="none" stroke="#bee6ff" stroke-opacity=".35" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" d="M14 96 H58 L58 106 Q100 112 140 106 Q168 102 190 98 Q186 122 172 136"/>
+            <circle cx="24" cy="85" r="8" fill="url(#sh-glow)"/>
+            <circle cx="24" cy="85" r="1.7" fill="rgba(220,240,255,.9)"/>
+          </svg></div></div>
+          <div class="island island--near"><svg viewBox="0 0 560 400" preserveAspectRatio="xMinYMax meet" focusable="false">
+            <defs>
+              <g id="ni-crown"><path d="M0 0 Q20 -26 56 -8 Q24 -14 0 0Z"/><path d="M0 0 Q14 -34 42 -34 Q18 -24 0 0Z"/><path d="M0 0 Q-16 -30 -48 -22 Q-18 -18 0 0Z"/><path d="M0 0 Q-28 -8 -54 10 Q-22 0 0 0Z"/><path d="M0 0 Q26 2 54 22 Q22 8 0 0Z"/><path d="M0 0 Q-2 -38 -18 -46 Q-6 -26 0 0Z"/><path d="M0 0 Q-34 6 -50 34 Q-22 10 0 0Z"/><path d="M0 0 Q30 10 40 40 Q18 14 0 0Z"/></g>
+            </defs>
+            <path fill="#13283b" d="M0 262 C34 250 80 228 140 216 C210 202 290 208 360 232 C430 256 500 282 560 300 V400 H0 Z"/>
+            <path fill="none" stroke="#bee6ff" stroke-opacity=".3" stroke-width="1.6" stroke-linecap="round" d="M0 262 C34 250 80 228 140 216 C210 202 290 208 360 232 C430 256 500 282 560 300"/>
+            <g class="ni-p2">
+              <path fill="#071624" d="M248 238 Q252 196 310 170 L322 168 Q280 200 266 238 Z"/>
+              <use href="#ni-crown" fill="#071624" transform="translate(316 168) scale(1.5)"/>
+            </g>
+            <g class="ni-p1">
+              <path fill="#071624" d="M104 246 Q98 180 80 124 L90 120 Q118 180 122 246 Z"/>
+              <path fill="none" stroke="#bee6ff" stroke-opacity=".18" stroke-width="1.2" d="M122 246 Q118 180 90 120"/>
+              <use href="#ni-crown" fill="#071624" transform="translate(85 118) scale(2)"/>
+            </g>
+            <g fill="#08182a">
+              <path d="M404 264 L412 248 L430 242 L448 252 L456 274 Z"/>
+              <path d="M446 278 L454 264 L468 262 L478 280 Z"/>
+              <path d="M30 268 L38 254 L54 250 L66 262 L70 276 Z"/>
+            </g>
+            <path fill="none" stroke="#bee6ff" stroke-opacity=".22" stroke-width="1" stroke-linecap="round" d="M412 248 L430 242 L448 252 M454 264 L468 262 M38 254 L54 250"/>
+            <g transform="translate(290 198) rotate(-14)"><rect width="32" height="21" rx="7" fill="#0a1d30"/><path d="M9 0 V21 M23 0 V21" stroke="#bee6ff" stroke-opacity=".18"/></g>
+            <path fill="none" stroke="#071624" stroke-width="4" stroke-linecap="round" d="M514 292 L518 250 M510 258 L527 253"/>
+          </svg></div>
+          <div class="wave" style="--t:52%;--h:40px;--fill:#081826;--crest:.22;--dur:31s;--dir:reverse;--bobdur:5.5s;--bob:1.5px">
+            <div class="wave__track">
+              <svg viewBox="0 0 1200 40" preserveAspectRatio="none" focusable="false"><path d="M0 20 q100 -20 200 0 t200 0 t200 0 t200 0 t200 0 t200 0 V40 H0 Z"/><path class="crest" d="M0 20 q100 -20 200 0 t200 0 t200 0 t200 0 t200 0 t200 0"/></svg>
+              <div class="wave__body"></div>
+            </div>
+          </div>
+          <div class="wave" style="--t:76%;--h:54px;--fill:#06121d;--crest:.18;--dur:24s;--dir:normal;--bobdur:6.5s;--bob:2px">
+            <div class="wave__track">
+              <svg viewBox="0 0 1200 54" preserveAspectRatio="none" focusable="false"><path d="M0 26 q150 -28 300 0 t300 0 t300 0 t300 0 V54 H0 Z"/><path class="crest" d="M0 26 q150 -28 300 0 t300 0 t300 0 t300 0"/></svg>
+              <div class="wave__body"></div>
+            </div>
+          </div>
+        </div>
+        <div class="scene__glow"></div>
+        <div class="scene__glitter" id="sea-glitter"></div>
+        <div class="scene__gulls" id="sea-gulls"></div>
+        <!-- Merch flair: frost spotlight rays, soft glow, a faint drifting snowman-logo pattern and sparkles around the product stack (positioned by merch.js) -->
+        <div class="shop-fx" id="shop-fx">
+          <div class="shop-fx__glow"></div>
+          <div class="shop-fx__rays"></div>
+          <div class="shop-fx__sparkles">
+            <i style="--dx:-190px;--dy:-150px;--s:14px;--d:3.6s;--dl:-.4s"></i>
+            <i style="--dx:200px;--dy:-120px;--s:10px;--d:4.2s;--dl:-1.8s"></i>
+            <i style="--dx:-215px;--dy:20px;--s:9px;--d:3.2s;--dl:-2.6s"></i>
+            <i style="--dx:225px;--dy:70px;--s:15px;--d:4.6s;--dl:-1.1s"></i>
+            <i style="--dx:-150px;--dy:170px;--s:11px;--d:3.9s;--dl:-3s"></i>
+            <i style="--dx:150px;--dy:190px;--s:9px;--d:3.4s;--dl:-.9s"></i>
+            <i style="--dx:20px;--dy:-205px;--s:12px;--d:4s;--dl:-2.2s"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap hero__inner">
+        <div class="shop-copy">
+          <h1><span>Frosty</span> <span>Merch</span></h1>
+          <p class="hero__tag">Official FrostyReal gear. Hoodies, tees, crop tops, hats and stickers. Rep the snowman.</p>
+          <div class="btn-row">
+            <a class="pill pill--primary" href="#shop" data-goatcounter-click="shop-the-drop">Shop the drop</a>
+            <button class="pill pill--outline" id="hero-cart" type="button">View cart</button>
+          </div>
+        </div>
+
+        <!-- Best sellers: one big product card on top (cycles), the next one peeking out behind -->
+        <div class="pick" id="pick" role="group" aria-roledescription="carousel" aria-label="Best sellers">
+          <div class="pick__stage" id="pick-stage"></div>
+          <p class="pick__name" id="pick-name"></p>
+          <p class="pick__price" id="pick-price"></p>
+          <div class="pick__dots" id="pick-dots" role="group" aria-label="Pick a best seller"></div>
+        </div>
       </div>
     </section>
 
-    <section class="shop-body">
+    <!-- Shop -->
+    <section class="section shop" id="shop">
       <div class="wrap">
-        <p id="shop-status" class="shop-status" aria-live="polite">Loading the merch...</p>
-        <ul id="shop-grid" class="shop-grid"></ul>
-        <p class="more"><a href="https://frostyrealkick-shop.fourthwall.com/" target="_blank" rel="noopener">Prefer to browse on Fourthwall? Open the full store</a></p>
+        <div class="heading-row">
+          <h2>Grab your gear</h2>
+          <img class="sticker sticker--l" src="images/emote-winna.png" alt="">
+        </div>
+        <p class="lead">Tees, hoodies, crop tops and more. Tap anything to pick your color and size.</p>
+
+        <div class="filters" id="filters" role="group" aria-label="Filter by type" hidden></div>
+        <p class="sr" id="shop-live" aria-live="polite"></p>
+        <div class="shop-status" id="shop-status" aria-live="polite"></div>
+        <ul class="shop-grid" id="shop-grid"></ul>
+
+        <p class="shop-more">Prefer to browse on Fourthwall? <a class="text-link" href="https://frostyrealkick-shop.fourthwall.com/" target="_blank" rel="noopener">Open the full store</a></p>
       </div>
     </section>
   </main>
 
-  <button id="cart-btn" class="cart-btn" type="button" aria-label="Open cart">
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 9 17h12v-2H9.4l1.1-2h7.5a2 2 0 0 0 1.7-1l3.6-6.5A1 1 0 0 0 22.4 4H6.2l-.9-2H3z"/></svg>
-    <span>Cart</span><span id="cart-count" class="cart-count">0</span>
-  </button>
+  <div class="overlay" id="overlay" hidden></div>
 
-  <div id="overlay" class="overlay" hidden></div>
-
-  <aside id="cart" class="drawer" aria-label="Your cart" hidden>
-    <div class="drawer-head"><h2>Your cart</h2><button type="button" class="x" id="cart-close" aria-label="Close cart">&times;</button></div>
-    <ul id="cart-lines" class="cart-lines"></ul>
-    <div class="drawer-foot">
+  <!-- Cart drawer -->
+  <aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+    <div class="drawer__head">
+      <h2 id="cart-title">Your cart</h2>
+      <button type="button" class="x" id="cart-close" aria-label="Close cart">&times;</button>
+    </div>
+    <ul class="cart-lines" id="cart-lines"></ul>
+    <div class="drawer__foot" id="cart-foot">
       <p class="subtotal"><span>Subtotal</span><strong id="cart-total">$0.00</strong></p>
       <p class="fine">Shipping and taxes are added at checkout.</p>
-      <button id="checkout" class="btn btn-wide" type="button">Checkout</button>
-      <p id="cart-msg" class="fine" aria-live="polite"></p>
+      <button class="pill pill--primary pill--wide" id="checkout" type="button" data-goatcounter-click="checkout">Checkout securely</button>
+      <p class="fine" id="cart-msg" aria-live="polite">You'll finish paying on Fourthwall's secure checkout.</p>
     </div>
   </aside>
 
-  <div id="pdp" class="pdp" role="dialog" aria-modal="true" aria-labelledby="pdp-title" hidden>
-    <div class="pdp-card">
-      <button type="button" class="x pdp-x" id="pdp-close" aria-label="Close">&times;</button>
-      <div class="pdp-gallery">
-        <div class="pdp-stage"><img id="pdp-main" alt=""></div>
-        <ul id="pdp-thumbs" class="pdp-thumbs"></ul>
+  <!-- Product pop-up -->
+  <div class="pdp" id="pdp" role="dialog" aria-modal="true" aria-labelledby="pdp-title" hidden>
+    <div class="pdp__card">
+      <button type="button" class="x pdp__x" id="pdp-close" aria-label="Close">&times;</button>
+      <div class="pdp__gallery">
+        <div class="pdp__stage"><img id="pdp-main" alt=""></div>
+        <ul class="pdp__thumbs" id="pdp-thumbs"></ul>
       </div>
-      <div class="pdp-info">
+      <div class="pdp__info">
         <h2 id="pdp-title"></h2>
-        <p id="pdp-price" class="pdp-price"></p>
-        <div id="pdp-colors" class="opt"></div>
-        <div id="pdp-sizes" class="opt"></div>
-        <p id="pdp-desc" class="pdp-desc"></p>
-        <button id="pdp-add" class="btn btn-wide" type="button">Add to cart</button>
-        <p id="pdp-msg" class="fine" aria-live="polite"></p>
+        <p class="pdp__price" id="pdp-price"></p>
+        <a class="text-link pdp__guide" id="pdp-guide" target="_blank" rel="noopener" hidden>Size guide</a>
+        <div class="opt" id="pdp-colors"></div>
+        <div class="opt" id="pdp-sizes"></div>
+        <p class="pdp__desc" id="pdp-desc"></p>
+        <button class="pill pill--primary pill--wide" id="pdp-add" type="button">Add to cart</button>
+        <p class="fine" id="pdp-msg" aria-live="polite"></p>
       </div>
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <span>FrostyReal</span>
-      <span class="footer-links">
-        <a href="index.html">Back to the site</a>
-        <a href="https://frostyrealkick-shop.fourthwall.com/" target="_blank" rel="noopener">Fourthwall store</a>
-      </span>
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <a class="brand brand--sm" href="index.html#top" aria-label="FrostyReal home">
+        <img src="images/logo-white.png" alt="" height="24">
+        <span>FrostyReal</span>
+      </a>
+      <nav class="foot__links" aria-label="Social">
+        <a href="https://www.youtube.com/@frostyreallive" data-goatcounter-click="footer-youtube" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://kick.com/frostyreal" data-goatcounter-click="footer-kick" target="_blank" rel="noopener">Kick</a>
+        <a href="https://www.tiktok.com/@.frostyreal" data-goatcounter-click="footer-tiktok" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/frostyreallive/" data-goatcounter-click="footer-instagram" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://x.com/FrostyRealLive" data-goatcounter-click="footer-x" target="_blank" rel="noopener">X</a>
+        <a href="merch.html">Merch</a>
+        <a href="https://linktr.ee/frostyreal" data-goatcounter-click="footer-all-links" target="_blank" rel="noopener">All links</a>
+      </nav>
+      <a class="foot__mail" href="mailto:frostyrealkick@gmail.com">frostyrealkick@gmail.com</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="home.js"></script>
+  <script src="sea.js"></script>
   <script src="merch.js"></script>
 </body>
 </html>

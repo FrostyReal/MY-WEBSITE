@@ -3,32 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FrostyReal | Media kit</title>
-  <meta name="description" content="FrostyReal media kit for brands: channel numbers, audience and partnership options for Sea of Thieves content across Kick, YouTube, TikTok and Instagram.">
-  <meta property="og:title" content="FrostyReal | Media kit">
-  <meta property="og:description" content="Sea of Thieves creator on Kick, YouTube and TikTok. Campaign numbers, audience and ways to partner.">
-  <meta property="og:url" content="https://frostyreal.com/media-kit.html">
-  <link rel="canonical" href="https://frostyreal.com/media-kit.html">
-  <meta property="og:image" content="https://frostyreal.com/images/og-frostyreal.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://frostyreal.com/images/og-frostyreal.jpg">
-  <link rel="icon" href="images/favicon.png">
-  <link rel="apple-touch-icon" href="images/favicon.png">
+  <title>Lost at sea | FrostyReal</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="This page sank to the bottom of the ocean. Head back to the FrostyReal home page.">
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
   <meta name="theme-color" content="#02070d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="sea.css">
-  <link rel="stylesheet" href="mediakit.css">
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="/sea.css">
+  <style>
+    /* 404 page only: a centered message over the night sea */
+    .lost { align-items: center; padding-top: clamp(96px, 13svh, 140px); padding-bottom: clamp(48px, 8svh, 96px); }
+    .lost__inner { position: relative; z-index: 2; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .lost__code { font-family: var(--display); font-weight: 800; font-size: clamp(6rem, 24vw, 15rem); line-height: 0.85; margin: 0; color: var(--ice); text-shadow: 0 2px 40px rgba(2, 7, 13, 0.6); }
+    .lost h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); margin-top: 8px; }
+    .lost__line { max-width: 34ch; margin: 16px auto 0; font-size: 1.2rem; color: var(--ice); text-shadow: 0 1px 14px rgba(2, 7, 13, 0.75); }
+    .lost .btn-row { justify-content: center; }
+  </style>
 </head>
-<body class="kit-page" data-sea-life="calm">
+<body data-sea-life="calm">
   <a class="skip-link" href="#top">Skip to content</a>
   <canvas id="snow" aria-hidden="true"></canvas>
 
-  <!-- "Going deeper" background: depth contours, light pools and occasional sea life (see home.js and home.css) -->
+  <!-- "Going deeper" background: depth contours, light pools and occasional sea life (whale, fish school, shark, turtle, jellyfish) (see home.js and home.css) -->
   <div class="deep" id="deep" aria-hidden="true">
     <div class="deep__pools" id="deep-pools"></div>
     <svg class="deep__contours" id="deep-contours" width="100%" height="100%" focusable="false">
@@ -39,29 +39,28 @@
 
   <header class="top-bar" id="top-bar">
     <div class="top-bar__inner">
-      <a class="brand" href="index.html#top" aria-label="FrostyReal home">
-        <img src="images/logo-white.png" alt="" height="32">
+      <a class="brand" href="/index.html" aria-label="FrostyReal home">
+        <img src="/images/logo-white.png" alt="" height="32">
         <span>FrostyReal</span>
       </a>
       <a class="live-badge" id="live-badge" href="https://kick.com/frostyreal" target="_blank" rel="noopener" aria-label="FrostyReal is live on Kick now" data-goatcounter-click="live-badge" data-goatcounter-title="LIVE badge" hidden><span class="live-badge__dot" aria-hidden="true"></span><span>LIVE<span class="live-badge__long"> on Kick</span></span></a>
       <nav class="tabs" aria-label="Main">
-        <a href="index.html#top">Home</a>
-        <a href="index.html#watch">Watch</a>
-        <a href="index.html#live">Live</a>
-        <a href="index.html#partners">Partners</a>
+        <a href="/index.html#top">Home</a>
+        <a href="/index.html#watch">Watch</a>
+        <a href="/index.html#live">Live</a>
+        <a href="/index.html#partners">Partners</a>
         <span class="tabs__sep" aria-hidden="true"></span>
-        <a href="media-kit.html" data-goatcounter-click="nav-media-kit" class="is-active" aria-current="page">Media kit</a>
+        <a href="/media-kit.html" data-goatcounter-click="nav-media-kit">Media kit</a>
         <span class="tabs__sep" aria-hidden="true"></span>
-        <a href="merch.html" data-goatcounter-click="nav-merch">Merch</a>
+        <a href="/merch.html" data-goatcounter-click="nav-merch">Merch</a>
       </nav>
       <a class="pill pill--primary pill--sm top-bar__sub" data-goatcounter-click="subscribe" href="https://www.youtube.com/@frostyreallive?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
-      <a class="upc-pill" href="upc.html" data-goatcounter-click="nav-upc"><span class="upc-pill__glow" aria-hidden="true"></span><span class="upc-pill__embers" aria-hidden="true"><i style="--x:10%;--d:2.6s;--dl:-.4s"></i><i style="--x:22%;--d:3.4s;--dl:-1.9s"></i><i style="--x:33%;--d:2.9s;--dl:-1.1s"></i><i style="--x:44%;--d:3.8s;--dl:-2.7s"></i><i class="r" style="--x:56%;--d:3.1s;--dl:-.9s"></i><i class="r" style="--x:67%;--d:2.7s;--dl:-2.2s"></i><i class="r" style="--x:79%;--d:3.6s;--dl:-1.4s"></i><i class="r" style="--x:90%;--d:3s;--dl:-2.9s"></i></span><img src="images/upc-wordmark.png" alt="Ultimate Pirate Championship" height="22"></a>
+      <a class="upc-pill" href="/upc.html" data-goatcounter-click="nav-upc"><span class="upc-pill__glow" aria-hidden="true"></span><span class="upc-pill__embers" aria-hidden="true"><i style="--x:10%;--d:2.6s;--dl:-.4s"></i><i style="--x:22%;--d:3.4s;--dl:-1.9s"></i><i style="--x:33%;--d:2.9s;--dl:-1.1s"></i><i style="--x:44%;--d:3.8s;--dl:-2.7s"></i><i class="r" style="--x:56%;--d:3.1s;--dl:-.9s"></i><i class="r" style="--x:67%;--d:2.7s;--dl:-2.2s"></i><i class="r" style="--x:79%;--d:3.6s;--dl:-1.4s"></i><i class="r" style="--x:90%;--d:3s;--dl:-2.9s"></i></span><img src="/images/upc-wordmark.png" alt="Ultimate Pirate Championship" height="22"></a>
     </div>
   </header>
 
   <main id="top" tabindex="-1">
-    <!-- Hero: the same moonlit sea as the home page -->
-    <section class="hero kit-hero">
+    <section class="hero lost">
       <div class="scene" aria-hidden="true">
         <div class="scene__sky"></div>
         <div class="scene__stars" id="sea-stars"></div>
@@ -210,132 +209,14 @@
         <div class="scene__glitter" id="sea-glitter"></div>
         <div class="scene__gulls" id="sea-gulls"></div>
       </div>
-      <div class="wrap kit-hero__inner">
-        <div class="kit-hero__copy">
-          <h1>FrostyReal</h1>
-          <p class="kit-pitch">Sea of Thieves creator bringing the chaos to Kick, YouTube and TikTok. Let's build something your audience actually watches.</p>
-          <img class="kit-partner" id="partner-badge" src="" alt="Official Sea of Thieves Partner" width="240" height="135" hidden>
-          <div class="btn-row">
-            <a class="pill pill--primary" href="mailto:frostyrealkick@gmail.com?subject=Brand%20partnership%20with%20FrostyReal" data-goatcounter-click="work-with-me">Work with me</a>
-            <button type="button" class="pill pill--outline" data-print>Save as PDF</button>
-          </div>
-          <p class="print-only kit-print-mail">frostyrealkick@gmail.com</p>
-        </div>
-        <div class="kit-hero__art">
-          <div class="kit-photo">
-            <img src="images/frosty-photo.jpg" alt="FrostyReal" width="320" height="334">
-          </div>
-          <img class="kit-badge kit-badge--logo" src="images/logo-white.png" alt="" width="64" height="60">
-        </div>
-      </div>
-    </section>
-
-    <!-- Performance (hidden until KIT.performance has data) -->
-    <section class="section" id="performance" hidden>
-      <div class="wrap">
-        <h2>By the numbers</h2>
-        <p class="lead">How many people watch my videos and streams. Straight from YouTube Studio and Kick's official stats.</p>
-        <div class="perf" id="perf-list"></div>
-      </div>
-    </section>
-
-    <!-- Audience -->
-    <section class="section" id="audience">
-      <div class="wrap">
-        <h2>Who's watching</h2>
-        <ul class="followers" id="followers"></ul>
-        <p class="note" id="kit-note"></p>
-
-        <div class="demo" id="demo" hidden>
-          <div class="panel demo__box" id="demo-ages" hidden>
-            <h3>Age</h3>
-            <ul class="bars" id="bars-ages"></ul>
-          </div>
-          <div class="panel demo__box" id="demo-genders" hidden>
-            <h3>Gender</h3>
-            <ul class="gender-big" id="key-genders"></ul>
-            <div class="split" id="split-genders" role="img"></div>
-          </div>
-          <div class="panel demo__box" id="demo-countries" hidden>
-            <h3>Top countries</h3>
-            <ul class="bars" id="bars-countries"></ul>
-          </div>
-        </div>
-        <p class="note" id="demo-source" hidden></p>
-      </div>
-    </section>
-
-    <!-- Partnership options -->
-    <section class="section" id="options">
-      <div class="wrap">
-        <h2>Ways to partner</h2>
-        <p class="lead">Pick one or mix a few. Everything is built around what your brand needs.</p>
-        <ul class="opts">
-          <li class="panel opt">
-            <span class="opt__icon"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M14 13l5 3-5 3z"/></svg></span>
-            <h3>Sponsored short-form videos</h3>
-          </li>
-          <li class="panel opt">
-            <span class="opt__icon"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="3"/><path d="M9.5 9.5a9 9 0 0 0 0 13M22.5 9.5a9 9 0 0 1 0 13M5.5 5.5a15 15 0 0 0 0 21M26.5 5.5a15 15 0 0 1 0 21"/></svg></span>
-            <h3>Brand mentions in live streams</h3>
-          </li>
-          <li class="panel opt">
-            <span class="opt__icon"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 3l11 6v14l-11 6-11-6V9z"/><path d="M5 9l11 6 11-6M16 15v14"/></svg></span>
-            <h3>Product placements</h3>
-          </li>
-          <li class="panel opt">
-            <span class="opt__icon"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="8" width="26" height="18" rx="3"/><circle cx="16" cy="17" r="5"/><path d="M11 8l2-3h6l2 3"/></svg></span>
-            <h3>UGC content for ads</h3>
-          </li>
-          <li class="panel opt">
-            <span class="opt__icon"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 3l3.4 8.2L28 12l-6.5 5.6L23.5 26 16 21.5 8.5 26l2-8.4L4 12l8.6-.8z"/></svg></span>
-            <h3>Custom collaborations built around your brand's goals</h3>
-          </li>
-        </ul>
-        <p class="rates">Rates: contact me for current rates.</p>
-      </div>
-    </section>
-
-    <!-- Case study -->
-    <section class="section" id="case">
-      <div class="wrap">
-        <h2>Current partner</h2>
-        <p class="lead">A brand that already trusts the crew.</p>
-        <div class="case">
-          <article class="panel sponsor case__main">
-            <img src="images/goodys-logo.png" alt="Goody's Granola, like a cookie in a bag" width="156">
-            <div>
-              <h3>Goody's Granola</h3>
-              <p class="case__tag">Current partner</p>
-              <p>Brooklyn-made granola that's like a cookie in a bag.</p>
-              <p>Use code <strong>Frosty</strong> at checkout.</p>
-              <a class="pill pill--outline no-print" href="https://goodysgranola.nyc/?ref=frosty" target="_blank" rel="noopener">Shop Goody's Granola</a>
-              <p class="print-only">goodysgranola.nyc/?ref=frosty</p>
-            </div>
-          </article>
-          <a class="open-spot no-print" href="mailto:frostyrealkick@gmail.com?subject=Brand%20partnership%20with%20FrostyReal">
-            <span class="open-spot__title">Your brand here</span>
-            <span class="open-spot__line">This spot's open. Let's make your brand the next one on deck.</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact band -->
-    <section class="band" id="contact">
-      <div class="wrap">
-        <div class="panel panel--contact">
-          <div class="contact-fx" aria-hidden="true"></div>
-          <div class="contact__copy">
-            <h2 class="h2-sm">Let's work together</h2>
-            <p class="contact__mail">Business email: <a href="mailto:frostyrealkick@gmail.com?subject=Brand%20partnership%20with%20FrostyReal">frostyrealkick@gmail.com</a></p>
-            <p>DMs are open on every platform.</p>
-            <div class="btn-row">
-              <a class="pill pill--primary" href="mailto:frostyrealkick@gmail.com?subject=Brand%20partnership%20with%20FrostyReal" data-goatcounter-click="email-me">Email me</a>
-              <a class="pill pill--outline" href="https://linktr.ee/frostyreal" target="_blank" rel="noopener">All my links</a>
-              <button type="button" class="text-btn" data-print>Save as PDF</button>
-            </div>
-          </div>
+      <div class="wrap lost__inner">
+        <p class="lost__code" aria-hidden="true">404</p>
+        <h1>Lost at sea</h1>
+        <p class="lost__line">This page sank to the bottom of the ocean. Let's get you back to shore.</p>
+        <div class="btn-row">
+          <a class="pill pill--primary" href="/index.html">Back to shore</a>
+          <a class="pill pill--outline" href="/merch.html">Shop merch</a>
+          <a class="pill pill--outline" href="/media-kit.html">Media kit</a>
         </div>
       </div>
     </section>
@@ -343,8 +224,8 @@
 
   <footer class="foot">
     <div class="wrap foot__inner">
-      <a class="brand brand--sm" href="index.html#top" aria-label="FrostyReal home">
-        <img src="images/logo-white.png" alt="" height="24">
+      <a class="brand brand--sm" href="/index.html" aria-label="FrostyReal home">
+        <img src="/images/logo-white.png" alt="" height="24">
         <span>FrostyReal</span>
       </a>
       <nav class="foot__links" aria-label="Social">
@@ -353,15 +234,14 @@
         <a href="https://www.tiktok.com/@.frostyreal" data-goatcounter-click="footer-tiktok" target="_blank" rel="noopener">TikTok</a>
         <a href="https://www.instagram.com/frostyreallive/" data-goatcounter-click="footer-instagram" target="_blank" rel="noopener">Instagram</a>
         <a href="https://x.com/FrostyRealLive" data-goatcounter-click="footer-x" target="_blank" rel="noopener">X</a>
-        <a href="merch.html">Merch</a>
+        <a href="/merch.html">Merch</a>
         <a href="https://linktr.ee/frostyreal" data-goatcounter-click="footer-all-links" target="_blank" rel="noopener">All links</a>
       </nav>
       <a class="foot__mail" href="mailto:frostyrealkick@gmail.com">frostyrealkick@gmail.com</a>
     </div>
   </footer>
 
-  <script src="home.js"></script>
-  <script src="sea.js"></script>
-  <script src="mediakit.js"></script>
+  <script src="/home.js"></script>
+  <script src="/sea.js"></script>
 </body>
 </html>
